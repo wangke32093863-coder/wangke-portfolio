@@ -1,12 +1,165 @@
-const projects=[{"title": "AI 智能服务中台", "category": "service", "label": "LLM × STATE × RULE ENGINE", "date": "2024.06 — 至今（简历原文）", "desc": "将语义理解、状态管理与业务执行解耦，构建覆盖多轮咨询、智能挽单与人工协同的保险客服体系。", "tags": ["多轮对话", "智能挽单", "四层评测"], "metrics": ["承接人数 +40%", "NPS +7pt"], "cover": "a", "mock": "理解问题，也完成业务。", "mini": ["意图识别", "状态管理", "任务执行"], "parts": [["业务问题", "保险客服存在人效低、意图识别不准确和退保挽留能力不足等问题，需要在复杂会话中联通知识、保单信息与业务动作。"], ["我的职责", "主导 AI 多轮客服体系建设，设计意图识别 → 状态管理 → 规则决策 → Workflow → 人工兜底架构，将 LLM、RAG 与 API 执行解耦。"], ["关键设计", "构建四大业务域及二级意图体系，通过 Prompt、Few-shot、上下文增强及置信度路由优化分类；设计意图继承、动态切换和槽位补全机制，融合历史对话与实时保单信息。"], ["评测与迭代", "建立模型、生成、系统、业务四层指标体系，结合 F1、状态一致性、Workflow 成功率与业务 A/B 实验持续优化。"], ["项目成果", "简历记录：客服首响相关指标提升 27%，单客服承接人数提升 40%，NPS 提升 7 个百分点，退保率下降 16%，人力成本降低 514 万元。"]], "decisions": [["理解与执行解耦", "LLM 负责语义理解，业务规则决定可执行路径，RAG 与 API 分别承接知识和操作。"], ["用状态连接多轮会话", "通过意图继承、动态切换与槽位补全，减少重复追问并延续任务。"]], "flow": [["用户问题 + 历史对话", "CONTEXT"], ["意图识别与槽位提取", "LLM"], ["状态管理与业务规则", "STATE + RULES"], ["知识查询 · 保单操作 · 人工协同", "EXECUTION"]], "tools": ["RAG 知识库", "保单 API", "人工兜底"], "results": [["+40%", "单客服承接人数"], ["+7pt", "NPS"], ["−16%", "退保率"]], "evaluation": "用 F1 检查意图分类，用状态一致性检查多轮延续，用 Workflow 成功率检查执行，再通过业务 A/B 验证。"}, {"title": "用户流失 AI 预警与智能干预", "category": "growth", "label": "LLM × ML × WORKFLOW", "date": "2024.08 — 至今（简历原文）", "desc": "围绕保险第 3—6 期续缴窗口，连接语义特征、流失概率预测与差异化干预，形成运营效果回流闭环。", "tags": ["Cohort 分析", "风险分层", "智能运营"], "metrics": ["流失率下降 18.4%", "增量续缴保费 384 万"], "cover": "b", "mock": "让风险识别，走在流失之前。", "mini": ["识别风险", "分层决策", "运营干预"], "parts": [["业务问题", "第 3—6 期用户流失较高，传统运营的风险识别滞后、挽留策略粗放。"], ["我的职责", "主导搭建 LLM + ML + 规则引擎 + Workflow 的智能预警及干预体系，覆盖风险识别、概率预测、策略决策和效果回流。"], ["关键设计", "通过 Cohort 分析定位流失周期，拆解主动退保、支付异常、保障认知及服务体验等原因；用结构化输出提取对话风险特征，融合保单、缴费和用户行为数据。"], ["运营闭环", "结合风险原因、保单价值与干预可行性配置优先级，通过 Workflow 联通自动派单、人工干预和续缴结果回流，建立意图、预测与转化三级评测。"], ["项目成果", "简历记录：第 3—6 期流失率下降 18.4%，运营人工筛选效率提升 26%，累计带动增量续缴保费 384 万元。"]], "decisions": [["语义识别与概率预测分工", "LLM 从对话提取风险特征，融合保单、缴费及行为数据，由机器学习模型预测风险。"], ["让预警连接运营行动", "结合风险原因、保单价值与干预可行性确定优先级，再将续缴结果回流。"]], "flow": [["对话 + 保单 + 缴费与行为数据", "INPUT"], ["语义风险提取与多源特征融合", "LLM + FEATURES"], ["流失概率预测与动态分层", "ML + RULES"], ["自动派单 → 干预 → 续缴回流", "WORKFLOW"]], "tools": ["风险原因", "保单价值", "干预可行性"], "results": [["−18.4%", "第 3—6 期流失率"], ["+26%", "人工筛选效率"], ["384 万", "增量续缴保费"]], "evaluation": "通过意图识别、风险预测与业务转化三级评测，区分特征理解、预测表现和运营效果。"}, {"title": "优小保 AI 保险顾问", "category": "service", "label": "RAG × PERSONALIZATION", "date": "2025.02 — 2025.06", "desc": "从标准 FAQ 走向个性化保险咨询，串联用户理解、产品匹配、条款讲解与咨询转化。", "tags": ["保险知识库", "个性化推荐", "数字人"], "metrics": ["覆盖 26 款保险产品", "咨询转化率 +13%"], "cover": "c", "mock": "把专业条款，讲得更明白。", "mini": ["理解需求", "匹配产品", "解读条款"], "parts": [["业务问题", "保险产品专业门槛高、责任条款复杂，标准 FAQ 难以支撑用户对产品选择、适配原因和条款含义的深度咨询。"], ["我的职责", "主导从传统智能客服到 AI 保险顾问的升级，规划全链路能力框架，统筹技术、产品和业务资源。"], ["关键设计", "引入 RAG 搭建保险条款知识库和产品库，支持复杂条款解读与非标准问题答复；围绕年龄、家庭结构、保障需求与预算设计用户画像和个性化推荐逻辑。"], ["交互体验", "集成数字人交互能力，连接用户理解 → 产品匹配 → 产品讲解 → 条款解释 → 咨询转化流程。"], ["项目成果", "简历记录：覆盖 26 款主流保险产品，问题答复准确率提升 23.7%，线上咨询保单转化率提升 13%，减轻人工客服负荷。"]], "decisions": [["先建立可检索的产品知识", "以条款知识库与产品库支撑复杂条款解读和非标准问题回答。"], ["将推荐嵌入咨询链路", "根据年龄、家庭结构、需求与预算匹配产品，衔接产品讲解、条款解释和咨询转化。"]], "flow": [["用户需求与保障背景", "USER PROFILE"], ["条款知识库与产品库检索", "RAG"], ["个性化匹配与产品讲解", "RECOMMENDATION"], ["数字人交互与咨询转化", "EXPERIENCE"]], "tools": ["用户画像", "条款解读", "数字人交互"], "results": [["26 款", "覆盖保险产品"], ["+23.7%", "问题答复准确率"], ["+13%", "咨询保单转化率"]], "evaluation": "围绕答复准确性与咨询转化衡量知识服务及购买决策支持的效果。"}, {"title": "AI 内容与运营中台", "category": "platform", "label": "AIGC × CONTENT WORKFLOW", "date": "2025.08 — 2025.12", "desc": "重构从 Brief 到内容生成、合规审核、渠道适配和发布的数据闭环，让 AI 内容能力成为可复用的平台。", "tags": ["Prompt 模板", "人机审核", "渠道适配"], "metrics": ["生产效率 +30%", "一次可用率 58% → 80%"], "cover": "d", "mock": "从一个 Brief，到多渠道内容。", "mini": ["AI 生成", "合规审核", "多端适配"], "parts": [["业务问题", "内容需求持续增长，人工生产周期长、热点响应慢，多渠道规格适配成本高。"], ["我的职责", "主导中台整体规划，明确能力边界和落地路径，协同产研、运营与合规团队制定流程规则并完成校验。"], ["关键设计", "搭建 Brief → AI 生成 → 人机协同审核 → 渠道自动适配 → 一键发布 → 效果回流链路；在生成环节植入合规校验，预置渠道格式模板。"], ["效果优化", "通过 Prompt 分层、Few-shot、品牌规范注入和质量校验提升可用率；通过意图识别、槽位补全、任务路由与异常兜底提升任务成功率。"], ["项目成果", "简历记录：单条制作耗时由 50 分钟降至 35 分钟；一次可用率由 58% 提升至 80%；端到端任务成功率由 72% 提升至 90%；渠道适配耗时由 20 分钟降至 12 分钟。"]], "decisions": [["先结构化需求，再生成内容", "通过 Brief 解析、Prompt 分层、Few-shot 与品牌规范注入，提高主题和渠道要求的遵循度。"], ["把审核与适配纳入主流程", "生成环节植入合规校验，预置渠道模板，以 Workflow 连接审核、发布和效果回流。"]], "flow": [["运营 Brief 与渠道目标", "INPUT"], ["意图理解 · 任务路由 · AI 生成", "GENERATION"], ["人机审核与多渠道规格适配", "QUALITY + COMPLIANCE"], ["发布与效果数据回流", "FEEDBACK"]], "tools": ["Prompt 模板", "合规规则", "渠道规范"], "results": [["50→35 分", "单条内容制作耗时"], ["58→80%", "内容一次可用率"], ["72→90%", "端到端任务成功率"]], "evaluation": "分别监控内容一次可用率与端到端任务成功率，避免将生成质量等同于流程执行质量。"}];
-const panels=document.querySelector('#casePanels');
-function el(tag,cls,text){const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=text;return x}
-projects.forEach((p,i)=>{
- const panel=el('article','case');panel.id='case-'+i;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby','tab-'+i);panel.hidden=i!==0;
- const header=el('div','case-header'),intro=el('div');intro.append(el('div','case-label',p.label),el('h3','case-title',p.title),el('p','case-summary',p.desc));const role=el('div','case-role');role.append(el('b','', '产品专家 / 项目主导'),el('div','',p.date));header.append(intro,role);
- const grid=el('div','case-grid'),story=el('div','case-story');story.append(el('div','detail-label','THE PROBLEM'),el('h4','', '先解决什么问题？'),el('p','',p.parts[0][1]),el('div','detail-label','PRODUCT DECISIONS'),el('h4','','为什么这样设计？'));p.decisions.forEach(([t,d])=>{const x=el('div','decision');x.append(el('strong','',t),el('p','',d));story.append(x)});
- const visual=el('div','case-visual'),vt=el('div','visual-title');vt.append(el('span','','SOLUTION ARCHITECTURE'),el('span','','0'+(i+1)));visual.append(vt);const flow=el('div','flow');p.flow.forEach(([t,s],n)=>{if(n)flow.append(el('div','flow-arrow','↓'));const node=el('div','flow-node'+(n===2?' emphasis':''));node.append(el('span','',t),el('small','',s));flow.append(node)});const branches=el('div','flow-branches');p.tools.forEach(t=>branches.append(el('span','',t)));flow.append(branches);visual.append(flow,el('p','visual-note',p.evaluation));grid.append(story,visual);
- const results=el('div','case-results');p.results.forEach(([v,l])=>{const r=el('div','case-result');r.append(el('strong','',v),el('span','',l));results.append(r)});const foot=el('div','case-footer'),details=el('details');details.append(el('summary','','展开职责与完整成果'));const extra=el('div','extra');extra.append(el('p','',p.parts[1][1]),el('p','',p.parts[p.parts.length-1][1]));details.append(extra);foot.append(details);panel.append(header,grid,results,foot);panels.append(panel);
+/* 项目数据（内容与简历一致） */
+const projects=[
+{"title":"AI 智能服务中台","category":"service","label":"LLM × STATE × RULE ENGINE","date":"2024.06 — 至今（简历原文）","desc":"将语义理解、状态管理与业务执行解耦，构建覆盖多轮咨询、智能挽单与人工协同的保险客服体系。","tags":["多轮对话","智能挽单","四层评测"],"metrics":["承接人数 +40%","NPS +7pt"],"cover":"a","mock":"理解问题，也完成业务。","mini":["意图识别","状态管理","任务执行"],"parts":[["业务问题","保险客服存在人效低、意图识别不准确和退保挽留能力不足等问题，需要在复杂会话中联通知识、保单信息与业务动作。"],["我的职责","主导 AI 多轮客服体系建设，设计意图识别 → 状态管理 → 规则决策 → Workflow → 人工兜底架构，将 LLM、RAG 与 API 执行解耦。"],["关键设计","构建四大业务域及二级意图体系，通过 Prompt、Few-shot、上下文增强及置信度路由优化分类；设计意图继承、动态切换和槽位补全机制，融合历史对话与实时保单信息。"],["评测与迭代","建立模型、生成、系统、业务四层指标体系，结合 F1、状态一致性、Workflow 成功率与业务 A/B 实验持续优化。"],["项目成果","简历记录：客服首响相关指标提升 27%，单客服承接人数提升 40%，NPS 提升 7 个百分点，退保率下降 16%，人力成本降低 514 万元。"]],"decisions":[["理解与执行解耦","LLM 负责语义理解，业务规则决定可执行路径，RAG 与 API 分别承接知识和操作。"],["用状态连接多轮会话","通过意图继承、动态切换与槽位补全，减少重复追问并延续任务。"]],"flow":[["用户问题 + 历史对话","CONTEXT"],["意图识别与槽位提取","LLM"],["状态管理与业务规则","STATE + RULES"],["知识查询 · 保单操作 · 人工协同","EXECUTION"]],"tools":["RAG 知识库","保单 API","人工兜底"],"results":[["+40%","单客服承接人数"],["+7pt","NPS"],["−16%","退保率"]],"evaluation":"用 F1 检查意图分类，用状态一致性检查多轮延续，用 Workflow 成功率检查执行，再通过业务 A/B 验证。"},
+{"title":"用户流失 AI 预警与智能干预","category":"growth","label":"LLM × ML × WORKFLOW","date":"2024.08 — 至今（简历原文）","desc":"围绕保险第 3—6 期续缴窗口，连接语义特征、流失概率预测与差异化干预，形成运营效果回流闭环。","tags":["Cohort 分析","风险分层","智能运营"],"metrics":["流失率下降 18.4%","增量续缴保费 384 万"],"cover":"b","mock":"让风险识别，走在流失之前。","mini":["识别风险","分层决策","运营干预"],"parts":[["业务问题","第 3—6 期用户流失较高，传统运营的风险识别滞后、挽留策略粗放。"],["我的职责","主导搭建 LLM + ML + 规则引擎 + Workflow 的智能预警及干预体系，覆盖风险识别、概率预测、策略决策和效果回流。"],["关键设计","通过 Cohort 分析定位流失周期，拆解主动退保、支付异常、保障认知及服务体验等原因；用结构化输出提取对话风险特征，融合保单、缴费和用户行为数据。"],["运营闭环","结合风险原因、保单价值与干预可行性配置优先级，通过 Workflow 联通自动派单、人工干预和续缴结果回流，建立意图、预测与转化三级评测。"],["项目成果","简历记录：第 3—6 期流失率下降 18.4%，运营人工筛选效率提升 26%，累计带动增量续缴保费 384 万元。"]],"decisions":[["语义识别与概率预测分工","LLM 从对话提取风险特征，融合保单、缴费及行为数据，由机器学习模型预测风险。"],["让预警连接运营行动","结合风险原因、保单价值与干预可行性确定优先级，再将续缴结果回流。"]],"flow":[["对话 + 保单 + 缴费与行为数据","INPUT"],["语义风险提取与多源特征融合","LLM + FEATURES"],["流失概率预测与动态分层","ML + RULES"],["自动派单 → 干预 → 续缴回流","WORKFLOW"]],"tools":["风险原因","保单价值","干预可行性"],"results":[["−18.4%","第 3—6 期流失率"],["+26%","人工筛选效率"],["384 万","增量续缴保费"]],"evaluation":"通过意图识别、风险预测与业务转化三级评测，区分特征理解、预测表现和运营效果。"},
+{"title":"优小保 AI 保险顾问","category":"service","label":"RAG × PERSONALIZATION","date":"2025.02 — 2025.06","desc":"从标准 FAQ 走向个性化保险咨询，串联用户理解、产品匹配、条款讲解与咨询转化。","tags":["保险知识库","个性化推荐","数字人"],"metrics":["覆盖 26 款保险产品","咨询转化率 +13%"],"cover":"c","mock":"把专业条款，讲得更明白。","mini":["理解需求","匹配产品","解读条款"],"parts":[["业务问题","保险产品专业门槛高、责任条款复杂，标准 FAQ 难以支撑用户对产品选择、适配原因和条款含义的深度咨询。"],["我的职责","主导从传统智能客服到 AI 保险顾问的升级，规划全链路能力框架，统筹技术、产品和业务资源。"],["关键设计","引入 RAG 搭建保险条款知识库和产品库，支持复杂条款解读与非标准问题答复；围绕年龄、家庭结构、保障需求与预算设计用户画像和个性化推荐逻辑。"],["交互体验","集成数字人交互能力，连接用户理解 → 产品匹配 → 产品讲解 → 条款解释 → 咨询转化流程。"],["项目成果","简历记录：覆盖 26 款主流保险产品，问题答复准确率提升 23.7%，线上咨询保单转化率提升 13%，减轻人工客服负荷。"]],"decisions":[["先建立可检索的产品知识","以条款知识库与产品库支撑复杂条款解读和非标准问题回答。"],["将推荐嵌入咨询链路","根据年龄、家庭结构、需求与预算匹配产品，衔接产品讲解、条款解释和咨询转化。"]],"flow":[["用户需求与保障背景","USER PROFILE"],["条款知识库与产品库检索","RAG"],["个性化匹配与产品讲解","RECOMMENDATION"],["数字人交互与咨询转化","EXPERIENCE"]],"tools":["用户画像","条款解读","数字人交互"],"results":[["26 款","覆盖保险产品"],["+23.7%","问题答复准确率"],["+13%","咨询保单转化率"]],"evaluation":"围绕答复准确性与咨询转化衡量知识服务及购买决策支持的效果。"},
+{"title":"AI 内容与运营中台","category":"platform","label":"AIGC × CONTENT WORKFLOW","date":"2025.08 — 2025.12","desc":"重构从 Brief 到内容生成、合规审核、渠道适配和发布的数据闭环，让 AI 内容能力成为可复用的平台。","tags":["Prompt 模板","人机审核","渠道适配"],"metrics":["生产效率 +30%","一次可用率 58% → 80%"],"cover":"d","mock":"从一个 Brief，到多渠道内容。","mini":["AI 生成","合规审核","多端适配"],"parts":[["业务问题","内容需求持续增长，人工生产周期长、热点响应慢，多渠道规格适配成本高。"],["我的职责","主导中台整体规划，明确能力边界和落地路径，协同产研、运营与合规团队制定流程规则并完成校验。"],["关键设计","搭建 Brief → AI 生成 → 人机协同审核 → 渠道自动适配 → 一键发布 → 效果回流链路；在生成环节植入合规校验，预置渠道格式模板。"],["效果优化","通过 Prompt 分层、Few-shot、品牌规范注入和质量校验提升可用率；通过意图识别、槽位补全、任务路由与异常兜底提升任务成功率。"],["项目成果","简历记录：单条制作耗时由 50 分钟降至 35 分钟；一次可用率由 58% 提升至 80%；端到端任务成功率由 72% 提升至 90%；渠道适配耗时由 20 分钟降至 12 分钟。"]],"decisions":[["先结构化需求，再生成内容","通过 Brief 解析、Prompt 分层、Few-shot 与品牌规范注入，提高主题和渠道要求的遵循度。"],["把审核与适配纳入主流程","生成环节植入合规校验，预置渠道模板，以 Workflow 连接审核、发布和效果回流。"]],"flow":[["运营 Brief 与渠道目标","INPUT"],["意图理解 · 任务路由 · AI 生成","GENERATION"],["人机审核与多渠道规格适配","QUALITY + COMPLIANCE"],["发布与效果数据回流","FEEDBACK"]],"tools":["Prompt 模板","合规规则","渠道规范"],"results":[["50→35 分","单条内容制作耗时"],["58→80%","内容一次可用率"],["72→90%","端到端任务成功率"]],"evaluation":"分别监控内容一次可用率与端到端任务成功率，避免将生成质量等同于流程执行质量。"}
+];
+
+/* 工具函数 */
+function el(tag, cls, text){
+  const x = document.createElement(tag);
+  if (cls) x.className = cls;
+  if (text !== undefined) x.textContent = text;
+  return x;
+}
+
+/* 渲染案例面板 */
+const panels = document.querySelector('#casePanels');
+projects.forEach((p, i) => {
+  const panel = el('article', 'case');
+  panel.id = 'case-' + i;
+  panel.setAttribute('role', 'tabpanel');
+  panel.setAttribute('aria-labelledby', 'tab-' + i);
+  panel.hidden = i !== 0;
+
+  const header = el('div', 'case-header');
+  const intro = el('div');
+  intro.append(el('div', 'case-label', p.label), el('h3', 'case-title', p.title), el('p', 'case-summary', p.desc));
+  const role = el('div', 'case-role');
+  role.append(el('b', '', '产品专家 / 项目主导'), el('div', 'date', p.date));
+  header.append(intro, role);
+
+  const grid = el('div', 'case-grid');
+  const story = el('div', 'case-story');
+  story.append(
+    el('div', 'detail-label', 'THE PROBLEM'),
+    el('h4', '', '先解决什么问题？'),
+    el('p', 'problem', p.parts[0][1]),
+    el('div', 'detail-label', 'PRODUCT DECISIONS'),
+    el('h4', '', '为什么这样设计？')
+  );
+  p.decisions.forEach(([t, d]) => {
+    const x = el('div', 'decision');
+    x.append(el('strong', '', t), el('p', '', d));
+    story.append(x);
+  });
+
+  const visual = el('div', 'case-visual');
+  const vt = el('div', 'visual-title');
+  vt.append(el('span', '', 'SOLUTION ARCHITECTURE'), el('span', '', '0' + (i + 1)));
+  visual.append(vt);
+  const flow = el('div', 'flow');
+  p.flow.forEach(([t, s], n) => {
+    if (n) flow.append(el('div', 'flow-arrow', '↓'));
+    const node = el('div', 'flow-node' + (n === 2 ? ' emphasis' : ''));
+    node.append(el('span', '', t), el('small', '', s));
+    flow.append(node);
+  });
+  const branches = el('div', 'flow-branches');
+  p.tools.forEach(t => branches.append(el('span', '', t)));
+  flow.append(branches);
+  visual.append(flow, el('p', 'visual-note', p.evaluation));
+  grid.append(story, visual);
+
+  const results = el('div', 'case-results');
+  p.results.forEach(([v, l]) => {
+    const r = el('div', 'case-result');
+    const strong = el('strong', '');
+    strong.dataset.value = v;
+    r.append(strong, el('span', '', l));
+    results.append(r);
+  });
+
+  const foot = el('div', 'case-footer');
+  const details = el('details');
+  details.append(el('summary', '', '展开职责与完整成果'));
+  const extra = el('div', 'extra');
+  extra.append(el('p', '', p.parts[1][1]), el('p', '', p.parts[p.parts.length - 1][1]));
+  details.append(extra);
+  foot.append(details);
+
+  panel.append(header, grid, results, foot);
+  panels.append(panel);
 });
-const tabs=[...document.querySelectorAll('[role=tab]')];function select(i,focus=false){tabs.forEach((t,n)=>{t.setAttribute('aria-selected',String(n===i));t.tabIndex=n===i?0:-1;document.querySelector('#case-'+n).hidden=n!==i});if(focus)tabs[i].focus();history.replaceState(null,'','#work')}
-tabs.forEach((t,i)=>{t.addEventListener('click',()=>select(i));t.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight')n=(i+1)%tabs.length;if(e.key==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;if(e.key==='Home')n=0;if(e.key==='End')n=tabs.length-1;if(n!==undefined){e.preventDefault();select(n,true)}})});
+
+/* Tab 切换 */
+const tabs = [...document.querySelectorAll('[role=tab]')];
+let active = 0;
+
+function select(i, focus = false){
+  active = i;
+  tabs.forEach((t, n) => {
+    t.setAttribute('aria-selected', String(n === i));
+    t.tabIndex = n === i ? 0 : -1;
+    document.querySelector('#case-' + n).hidden = n !== i;
+  });
+  animateMetrics(i);
+  if (focus) tabs[i].focus();
+  history.replaceState(null, '', '#work');
+}
+tabs.forEach((t, i) => {
+  t.addEventListener('click', () => select(i));
+  t.addEventListener('keydown', e => {
+    let n;
+    if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+    if (e.key === 'ArrowLeft') n = (i + tabs.length - 1) % tabs.length;
+    if (e.key === 'Home') n = 0;
+    if (e.key === 'End') n = tabs.length - 1;
+    if (n !== undefined) { e.preventDefault(); select(n, true); }
+  });
+});
+
+/* 数字滚动 */
+function animateMetrics(i){
+  document.querySelectorAll('#case-' + i + ' .case-result strong').forEach(s => {
+    const raw = s.dataset.value || '';
+    if (raw.includes('→')) { s.textContent = raw; return; }
+    const m = raw.match(/^([+\-−])?(\d+(?:\.\d+)?)(.*)$/);
+    if (!m) { s.textContent = raw; return; }
+    const sign = m[1] || '';
+    const target = parseFloat(m[2]);
+    const suffix = m[3] || '';
+    const dec = m[2].includes('.') ? 1 : 0;
+    const t0 = performance.now();
+    const dur = 900;
+    function step(now){
+      let k = Math.min(1, (now - t0) / dur);
+      k = 1 - Math.pow(1 - k, 3);
+      s.textContent = sign + (target * k).toFixed(dec) + suffix;
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+
+/* 滚动显现 */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(n => io.observe(n));
+
+/* 案例区首次进入视口时启动数字滚动 */
+const caseIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { animateMetrics(active); caseIO.disconnect(); }
+  });
+}, { threshold: 0.15 });
+caseIO.observe(document.querySelector('#casePanels'));
+
+/* 导航滚动状态与高亮 */
+const nav = document.querySelector('#nav');
+const navLinks = [...document.querySelectorAll('.nav-links a:not(.nav-resume)')];
+const sections = ['expertise', 'work', 'approach', 'experience'].map(id => document.getElementById(id));
+
+function onScroll(){
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+  let idx = -1;
+  const pos = window.scrollY + 150;
+  sections.forEach((s, i) => { if (s && s.offsetTop <= pos) idx = i; });
+  navLinks.forEach((a, i) => a.classList.toggle('active', i === idx));
+}
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
